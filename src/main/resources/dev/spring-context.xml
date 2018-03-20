@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
     <!-- 扫描基本包 过滤controller层 -->
-    <context:component-scan base-package="com.yun" >
+    <context:component-scan base-package="com.yun.biz" >
         <context:exclude-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
@@ -43,15 +43,15 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
         <property name="configLocation" value="classpath:mybatis-context.xml" />
-       <!-- <property name="mapperLocations" value="classpath:com/shsxt/dao/mapper/*.xml" />-->
+        <property name="mapperLocations" value="classpath:com/yun/core/mapper/*.xml" />
     </bean>
 
     <!-- 配置扫描器 -->
-  <!--  <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.shsxt.dao" />
+    <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.yun.core.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-    </bean>-->
+    </bean>
     <!-- 配置全局异常处理类 -->
-   <!-- <bean  class="com.shsxt.exception.handler.GlobalExceptionHandler"/>-->
-
+    <!--<bean  class="com.shsxt.exception.handler.GlobalExceptionHandler"/>
+-->
 </beans>
