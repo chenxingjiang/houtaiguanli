@@ -1,8 +1,8 @@
-package com.yun.core.model;
+package com.yun.core.paramemodel;
 
 import java.util.Date;
 
-public class User {
+public class ParameUser {
     /**
      * id
      * 

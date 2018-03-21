@@ -1,11 +1,11 @@
 package com.yun.core.dao;
 
-import com.yun.core.model.User;
+import com.yun.core.model.TUser;
 
 
 /**
  * Created by Administrator on 2018\3\20 0020.
  */
 public interface UserDao {
-    public User selectUserByName(String userName);
+    public TUser selectUserByName(TUser tUser);
 }

@@ -1,7 +1,7 @@
 package com.yun.framework.util;
 
 
-import com.yun.core.model.User;
+import com.yun.core.model.TUser;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,7 +19,7 @@ public class VerificationLoginUtil {
      * @param resp
      * @param user
      */
-    public static   void userLoginTools (HttpSession session, HttpServletResponse resp, User user) {
+    public static   void userLoginTools (HttpSession session, HttpServletResponse resp, TUser user) {
 
         //// 令牌
         String authCustomerCode = GeneratePrimaryKeyStrategy.authCustomerCode();

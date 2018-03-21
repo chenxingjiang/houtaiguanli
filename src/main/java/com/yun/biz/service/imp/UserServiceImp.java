@@ -1,9 +1,9 @@
 package com.yun.biz.service.imp;
 
-import com.sun.deploy.net.HttpResponse;
 import com.yun.biz.service.UserService;
 import com.yun.core.dao.UserDao;
-import com.yun.core.model.User;
+import com.yun.core.model.TUser;
+import com.yun.core.paramemodel.ParameUser;
 import com.yun.framework.util.Md5Util;
 import com.yun.framework.util.Result;
 import com.yun.framework.util.StringUtil;
@@ -32,12 +32,12 @@ public class UserServiceImp implements UserService {
     private UserDao userDao;
 
     @Override
-    public Result userLogin(String userName,String userPwd) {
-        if(StringUtil.isEmpty(userName)||StringUtil.isEmpty(userPwd)){
+    public Result userLogin(ParameUser parameUser) {
+        if(StringUtil.isEmpty(parameUser.getUserName())||StringUtil.isEmpty(parameUser.getUserPwd())){
             return Result.fail("用户名或密码不能为空!");
         }
 
-        User user = userDao.selectUserByName(userName);
+        TUser user = userDao.selectUserByName(parameUser.getUserName());
         if(user == null || user.getUserPwd().equals(Md5Util.encode(userPwd))){
             return Result.fail("用户名或密码错误!");
         }
