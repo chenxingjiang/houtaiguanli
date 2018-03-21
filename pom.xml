@@ -20,10 +20,24 @@
     <slf4j-version>1.7.2</slf4j-version>
     <servlet-version>3.0.1</servlet-version>
     <jackson-version>2.7.0</jackson-version>
+    <fastjson_version>1.2.13</fastjson_version>
+    <commons-code_version>1.9</commons-code_version>
   </properties>
 
   <!--所依赖的jar包-->
   <dependencies>
+
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>${commons-code_version}</version>
+    </dependency>
+    <!-- fastjson配置 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson_version}</version>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>

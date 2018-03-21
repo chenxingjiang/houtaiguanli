@@ -5,7 +5,7 @@ import com.yun.framework.common.costant.HttpRequestConstant;
 import com.yun.framework.exception.GlobalException;
 import com.yun.framework.util.JsonUtil;
 import com.yun.framework.util.Result;
-import freemarker.log.Logger;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.method.HandlerMethod;
@@ -21,12 +21,15 @@ import java.lang.reflect.Method;
  * 全局异常处理器
  */
 public class GlobalExceptionHandler implements HandlerExceptionResolver {
+
+    //日志打印
+    private static final Logger LOGGER  =  LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
     @Override
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object hander, Exception e) {
         ModelAndView modelAndView = new ModelAndView();
-        //日志打印
 
-        private static final Logger LOGGER  =  LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
         //判断异常类型
         if(hander instanceof HandlerMethod){
             GlobalException globalException = null;

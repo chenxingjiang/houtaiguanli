@@ -1,6 +1,7 @@
 package com.yun.framework.util;
 
-import com.shsxt.crm.core.framework.constant.ResultConstant;
+
+import com.yun.framework.common.costant.ResultConstant;
 
 import java.io.Serializable;
 
